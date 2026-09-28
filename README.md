@@ -1,13 +1,12 @@
 # Personal Task Manager
 
+## Submission Information
+
 Project Code: WST21-PM-2026-SF<br>
 Student Name: TINGA, NHEIL B.<br>
 Course & Year: BSIT-2<br>
 Database Used: SQLite
 
-## Purpose of the Project
-
-The purpose of this project is to provide a simple personal task management system that helps users organize daily responsibilities in one place. Users can create tasks, review their task list, edit task details, remove tasks that are no longer needed, and update each task between pending and completed statuses. This project also demonstrates how Laravel routes, controllers, models, database migrations, and Blade views work together in a complete web application.
 
 ## Features
 
@@ -24,61 +23,47 @@ The purpose of this project is to provide a simple personal task management syst
 - SQLite
 - Blade templates
 
-<p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400" alt="Laravel Logo"></a></p>
+## Application Walkthrough
 
-<p align="center">
-<a href="https://github.com/laravel/framework/actions"><img src="https://github.com/laravel/framework/workflows/tests/badge.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/dt/laravel/framework" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/v/laravel/framework" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
-</p>
+The screenshots below show the complete task-management workflow from creating a task to marking it as completed.
 
-## About Laravel
+### Step 1: Open the task list
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
+The home page displays the Personal Task Manager dashboard. When there are no tasks, the empty-state message invites you to create your first task. Select **Create first task** or **Add a task** to begin.
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
+![Empty task list](screenshots/1.png)
 
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
+### Step 2: Create a task
 
-## Learning Laravel
+Enter a task title in the **Task title** field. You can also add optional notes to provide more context, then select **Add task** to save it.
 
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework.
+![Create task form](screenshots/2.png)
 
-In addition, [Laracasts](https://laracasts.com) contains thousands of video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
+### Step 3: Review and manage tasks
 
-You can also watch bite-sized lessons with real-world projects on [Laravel Learn](https://laravel.com/learn), where you will be guided through building a Laravel application from scratch while learning PHP fundamentals.
+After saving, the task appears in **Your tasks** with its title, notes, date added, and `pending` status. From this list, select **Edit** to update the task or **Delete** to remove it.
 
-## Agentic Development
+![Task list with a pending task](screenshots/3.png)
 
-Laravel's predictable structure and conventions make it ideal for AI coding agents like Claude Code, Cursor, and GitHub Copilot. Install [Laravel Boost](https://laravel.com/docs/ai) to supercharge your AI workflow:
+### Step 4: Update the task status
+
+Select the status toggle beside a pending task to mark it as completed. The dashboard counters update automatically, and the task is shown with a completed state. Select the toggle again if the task needs to return to pending.
+
+![Completed task](screenshots/4.png)
+
+## Local Setup
 
 ```bash
-composer require laravel/boost --dev
-
-php artisan boost:install
+composer install
+cp .env.example .env
+php artisan key:generate
+touch database/database.sqlite
+php artisan migrate
+php artisan serve
 ```
 
-Boost provides your agent 15+ tools and skills that help agents build Laravel applications while following best practices.
-
-## Contributing
-
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
-
-## Code of Conduct
-
-In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
-
-## Security Vulnerabilities
-
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
+Open the local URL shown by `php artisan serve` in your browser.
 
 ## License
 
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+This project is licensed under the MIT License.
